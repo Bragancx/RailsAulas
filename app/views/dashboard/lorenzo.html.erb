@@ -1,0 +1,19 @@
+<h1>Dashboard#lorenzo</h1>
+<%= link_to "NEW", "/dashboard/new"%>
+<br>
+<br>
+<% @users.each do |u| %>
+<label>ID:</label>
+<%= u.id %>
+<br>
+<%= u.name %>
+<br>
+<%= u.age %>
+<br>
+<%= link_to "SHOW", "/dashboard/#{u.id}/edit"%>
+<%= link_to "DESTROY", "/dashboard/#{u.id}", :method => :delete, :data => { :confirm => "Are you sure?" }%>
+<br>
+<br>
+<% end %>
+<%= link_to "LOGOUT", destroy_manager_session_path %>
+<%= current_manager.email%>

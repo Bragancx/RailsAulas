@@ -1,0 +1,38 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Entrada</h6>
+    </div>
+        <div class="card-body">
+            <%= link_to "+", new_financial_path, class: "btn btn-primary mb-2 float-right" %>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Value</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Value</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                    <% @financials.each do |f|%>
+                        <tr>
+                            <td><%= f.id %></td>
+                            <td><%= f.name %></td>
+                            <td><%= f.value %></td>
+                            <td><%= link_to "Editar", edit_financial_path(f.id) %></td>
+                        </tr>
+                    <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

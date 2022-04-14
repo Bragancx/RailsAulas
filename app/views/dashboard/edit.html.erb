@@ -1,0 +1,11 @@
+<h1>Dashboard#edit</h1>
+
+<%= form_with(url: "/dashboard/#{@user.id}", method: :put, local: true, model: @financial) do |f| %>
+    <label for="name">Name</label>
+    <%= f.text_field :name, id: "name" %>
+    <br>
+    <label for="age">Age</label>
+    <%= f.number_field :age, id: "age" %>
+
+    <%= f.submit "Update" %>
+<% end %>

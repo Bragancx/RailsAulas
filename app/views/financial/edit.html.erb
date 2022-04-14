@@ -1,0 +1,16 @@
+<h1>Financial#edit</h1>
+<%= form_with(url: "/financial/#{@financial.id}", method: :put, model: @financial) do |f| %>
+    <label for="type">Type</label>
+    <select name="financial[type_financial]" id="type">
+        <option value="0" <%= is_selected(@financial.type_financial, 0) %>>Entrada</option>
+        <option value="1" <%= is_selected(@financial.type_financial, 1) %>>Saida</option>
+    </select>
+    <br>
+    <label for="name">Name</label>
+    <%= f.text_field :name, id: "name" %>
+    <br>
+    <label for="value">Value</label>
+    <%= f.text_field :value, id: "value" %>
+    <br>
+    <%= f.submit "Salvar"%>
+<% end %>
